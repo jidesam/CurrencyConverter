@@ -14,7 +14,8 @@ export class CurrencyTableComponent implements OnInit {
   
   constructor( private currency: CurrencyServiceService) { }
   allCurrency : any;
-  p = 1
+  c = 1
+  p=1 
   base : string = ""
   showpagination = false;
 

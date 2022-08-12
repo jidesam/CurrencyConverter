@@ -17,7 +17,6 @@ export class OneOnOneCurrencyComponent implements OnInit {
 
   ngOnInit(): void {
     this.currency.getAllCurrency().subscribe((data =>{
-      console.table(data)
       this.allCurrency = data
     }))
     this.createForm()
@@ -27,8 +26,7 @@ export class OneOnOneCurrencyComponent implements OnInit {
     this.currency.convertCurrency(this.formGroup.controls['base'].value, this.formGroup.controls['quote'].value).subscribe((data =>{
     this.quote = this.formGroup.controls["quote"].value
       this.exchangerate = data[this.quote]* this.formGroup.controls["amount"].value
-      console.log(this.exchangerate)
-    console.log(data)
+     
     }
   ))
     
