@@ -1,0 +1,37 @@
+<div class="w-full bg-slate-200 mx-auto  h-screen pt-[150px] text-center">
+    Currency Converter
+    <div class="w-[50%] mx-auto my-auto bg-white h-[500px] text-center  rounded-md border-t-4 border-sky-300 ">
+        <div class="text-blue-600 p-5 text-2xl">
+        Exchange rate
+      </div>
+
+      <div class="text-black text-4xl mb-5">
+       {{quote | uppercase}}{{exchangerate}}
+      </div>
+      <form [formGroup]="formGroup">
+       <div>
+        <label for="amount" class="mr-5">Amount</label>
+            <input type="number" name="Amount" placeholder="enter an amount" class="p-3 border rounded-md w-[500px] focus:outline-0" formControlName="amount">
+       </div>
+        <div class="options flex justify-evenly mt-10">
+           <div class="option1">
+             <label for="from" class="mr-5" >From</label>
+            <select name="base" class="p-2.5 w-[150px] border" formControlName="base">
+                <option value="{{item.key}}" *ngFor="let item of allCurrency | keyvalue" >{{item.value}}</option>
+            </select>
+           </div>
+           <div class="switch">
+            SWITCH
+           </div>
+           <div class="option2">
+                 <label for="to" class="mr-5">to</label>
+            <select name="" id=""  class="p-2.5 w-[150px] border" formControlName="quote">
+                <option value="{{item.key}}" *ngFor="let item of allCurrency | keyvalue">{{item.value}}</option>
+            </select>
+           </div>
+        </div>
+        <button class="p-3 bg-sky-500 width-[350px] text-white rounded-md mt-10" (click)="convert()">Convert</button>
+        
+      </form>
+</div>
+</div>
