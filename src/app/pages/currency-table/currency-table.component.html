@@ -15,7 +15,7 @@
             </div>
              <div class="flex px-8" *ngFor="let currency of allCurrency | keyvalue | paginate : {itemsPerPage: 25, currentPage: p} " (click)="onSelect(currency.key)">
                 <div class="w-[30%] ml-8 cursor-pointer ">
-                    {{currency.key}}
+                    {{currency.key }}
                 </div>
                 <div class="w-[50%] cursor-pointer">
                     {{currency.value}}

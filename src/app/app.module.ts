@@ -13,13 +13,16 @@ import { CurrencyServiceComponent } from './service/currency-service/currency-se
 import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { OneOnOneCurrencyComponent } from './pages/one-on-one-currency/one-on-one-currency.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ErlcomePageComponent,
     CurrencyTableComponent,
-    CurrencyServiceComponent
+    CurrencyServiceComponent,
+    OneOnOneCurrencyComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     SharedModule,
     HttpClientModule,
     MatTableModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ReactiveFormsModule
     
   ],
   providers: [],

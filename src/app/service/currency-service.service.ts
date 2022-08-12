@@ -15,4 +15,15 @@ export class CurrencyServiceService {
   baseCurrency(base:any) : Observable<any>{
     return this.http.get<any>(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${base}.json`)
   }
+   getAllCurrency (): Observable<any>{
+    return this.http.get<any>('https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json')
+  }
+
+  convertCurrency(base: any, quote:any): Observable<any> {
+    return this.http.get<any>(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${base}/${quote}.json`)
+  }
+  
 }
+
+
+
