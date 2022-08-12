@@ -1,0 +1,11 @@
+ <div class="flex px-8" *ngFor="let currency of allCurrencyRate | keyvalue | paginate : {itemsPerPage: 25, currentPage: p} " (click)="onSelect($event)">
+                <div class="w-[30%] ml-8">
+                    {{currency.key}}
+                </div>
+                <div class="w-[50%]">
+                    {{currency.value}}
+                </div>
+            </div>
+            <div class="mt-8">
+                <pagination-controls (pageChange)="p = $event" ></pagination-controls>
+            </div>
