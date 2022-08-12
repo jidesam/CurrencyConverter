@@ -29,12 +29,8 @@ export class CurrencyTableComponent implements OnInit {
    }
   onSelect(data:any){
       this.currency.baseCurrency(data).subscribe((result)=> {
-        console.log(result)
-        
-        this.base = data;
-
+       this.base = data;
         this.allCurrencyRate = result[data]
-        console.log(result[data])
         this.showpagination = true
       })
      
