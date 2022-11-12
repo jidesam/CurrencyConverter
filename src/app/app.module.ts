@@ -15,6 +15,7 @@ import {MatTableModule} from '@angular/material/table';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { OneOnOneCurrencyComponent } from './pages/one-on-one-currency/one-on-one-currency.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CurrencyTableIiComponent } from './pages/currency-table-ii/currency-table-ii.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ErlcomePageComponent,
     CurrencyTableComponent,
     CurrencyServiceComponent,
-    OneOnOneCurrencyComponent
+    OneOnOneCurrencyComponent,
+    CurrencyTableIiComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,39 @@
+<div class=" h-screen">
+<app-header></app-header>
+<div>
+ <div class=" mx-auto lg:w-[80%] flex flex-col lg:flex-row  px-8 my-8  items-center gap-4  lg:mt-8">
+   
+    <label for="currency" class="text-2xl">Select Currency</label>
+    <select name="" id="" class="px-4 py-2 md:w-[300px] border rounded-md outline-0" (change)="onSelect($event.target)" >
+        <option value="">Select Currency</option>
+        <option value="{{item.key}}" *ngFor="let item of allCurrency | keyvalue ">{{item.value}}</option>
+    </select>
+</div>
+<div class="w-screen">
+    <p class="text-center py-12 text-3xl">Exchange Rate</p>
+    <table class="w-[90%]  mx-auto">
+         <thead class="bg-[#eff0f6]  w-full rounded-md">
+          <tr class="gap-2 p-2">
+            
+            <th class="w-[17%] text-left pl-4 py-2 ">Currency </th>
+            <th class="w-[22%] text-left pl-4 py-2 ">Currency Code</th>
+            <th class="w-[17%] text-left pl-4 py-2 hidden lg:block ">Flag</th>
+            <th class="w-[22%] text-left pl-4 py-2 ">Exchange Rate</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let items of allCurrencyExchangeRate| keyvalue">
+               
+                   
+                    <td class="w-[22%] text-left pl-4 py-2 ">{{allCurrencies[$any(items.key)]}}</td>
+                    <td class="w-[17%] text-left pl-4 py-2 ">{{items.key}}</td>
+                    <td class="w-[17%] text-left pl-4 py-2 hidden lg:block "><img src="{{allFlags[$any(items.key)]}}" alt="{{items.key}}" class="w-[50px] h-[50px]"></td>
+                    <td class="w-[22%] text-left pl-4 py-2 ">{{items.value}}</td>
+              
+            </tr>
+           
+    </table>
+</div>
+</div>
+
+</div>

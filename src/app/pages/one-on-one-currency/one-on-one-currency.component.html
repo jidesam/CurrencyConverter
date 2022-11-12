@@ -1,6 +1,6 @@
-<div class="w-full bg-slate-200 mx-auto  h-screen pt-[150px] text-center">
-    Currency Converter
-    <div class="lg:w-[50%]   mx-auto my-auto bg-white h-[500px] text-center  rounded-md border-t-4 border-sky-300 ">
+<div class="w-full bg-slate-200 mx-auto  h-screen flex items-center text-center">
+    
+    <div class=" md:w-[80%] lg:w-[50%] h-screen  mx-auto my-auto bg-white lg:h-[500px] text-center  rounded-xl shadow-xl">
         <div class="text-blue-600 p-5 text-2xl">
         Exchange rate
       </div>
@@ -9,29 +9,29 @@
         <div class="text-black text-4xl mb-5">
        {{quote | uppercase}}{{exchangerate}}
       </div>
-      <form [formGroup]="formGroup" class="p-4">
-       <div>
-        <label for="amount" class="mr-5">Amount</label>
-            <input type="number" name="Amount" placeholder="enter an amount" class="p-3 border rounded-md lg:w-[500px] focus:outline-0" formControlName="amount">
+      <form [formGroup]="formGroup" class="p-4 ">
+       <div class="flex gap-4">
+        <label for="amount" class="md:mr-10 text-[4B5466] md:text-base">Amount</label>
+            <input type="number" name="Amount" placeholder="enter an amount" class="p-3 border rounded-md w-[90%] md:w-[50%] lg:w-[60%] focus:outline-0" formControlName="amount">
        </div>
-        <div class="options flex justify-evenly mt-10">
-           <div class="option1">
-             <label for="from" class="mr-5" >From</label>
-            <select name="base" class="p-2.5 w-[150px] border" formControlName="base">
+        <div class="lg:flex lg:justify-between items-center mt-10 lg:w-[85%] my-6">
+           <div class=" flex md:gap-10 my-8 lg:justify-between px-2">
+             <label for="from" class="mr-5 md:mr-0 text-[4B5466] md:text-base" >From</label>
+            <select name="base" class=" w-[90%] md:w-[50%] lg:w-[100%] border rounded-md md:ml-6  px-4 py-2" formControlName="base">
                 <option value="{{item.key}}" *ngFor="let item of allCurrency | keyvalue" >{{item.value}}</option>
             </select>
            </div>
-           <div class="switch">
+           <!-- <div class="switch">
             SWITCH
-           </div>
-           <div class="option2">
-                 <label for="to" class="mr-5">to</label>
-            <select name="" id=""  class="p-2.5 w-[150px] border" formControlName="quote">
+           </div> -->
+           <div class="flex gap-8 my-4 md:gap-16 lg:gap-4">
+                 <label for="to" class="md:mr-5  text-[4B5466]  md:text-base">To</label>
+            <select name="" id=""  class=" w-[80%] md:w-[50%] lg:w-[100%] border rounded-md px-4 py-2 " formControlName="quote">
                 <option value="{{item.key}}" *ngFor="let item of allCurrency | keyvalue">{{item.value}}</option>
             </select>
            </div>
         </div>
-        <button class="p-3 bg-sky-500 width-[350px] text-white rounded-md mt-10" (click)="convert()">Convert</button>
+        <button class=" flex justify-center mx-[auto] font-normal rounded-lg outline-none border hover:bg-[#47C97E] hover:text-white mt-12 border-[#47C97E] bg-transparent text-[#002A80]   px-4 py-2  md:text-base" (click)="convert()">Convert</button>
         
       </form>
       </div>
