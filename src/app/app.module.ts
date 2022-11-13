@@ -10,12 +10,13 @@ import {MatButtonModule} from '@angular/material/button';
 import { CurrencyTableComponent } from './pages/currency-table/currency-table.component'
 import { SharedModule } from './shared/shared.module';
 import { CurrencyServiceComponent } from './service/currency-service/currency-service.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { OneOnOneCurrencyComponent } from './pages/one-on-one-currency/one-on-one-currency.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CurrencyTableIiComponent } from './pages/currency-table-ii/currency-table-ii.component';
+import { InterceptorInterceptor } from './service/interceptor.interceptor';
 
 @NgModule({
   declarations: [
@@ -36,10 +37,15 @@ import { CurrencyTableIiComponent } from './pages/currency-table-ii/currency-tab
     HttpClientModule,
     MatTableModule,
     NgxPaginationModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
     
   ],
-  providers: [],
+  providers: [
+    {provide : HTTP_INTERCEPTORS,
+    useClass: InterceptorInterceptor,
+    multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -22,7 +22,7 @@
           </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let items of allCurrencyExchangeRate| keyvalue">
+            <tr *ngFor="let items of allCurrencyExchangeRate| keyvalue |  paginate: { itemsPerPage: 20, currentPage: p }">
                
                    
                     <td class="w-[22%] text-left pl-4 py-2 ">{{allCurrencies[$any(items.key)]}}</td>
@@ -34,6 +34,14 @@
            
     </table>
 </div>
+ <div class="px-28 flex justify-between mt-8">
+                    <div class="">
+                        Showing {{allCurrencyExchangeRate?.length ? allCurrencyExchangeRate.length: 0}} out of {{allCurrencyExchangeRate?.length ? allCurrencyExchangeRate.length: 0}}
+                    </div>
+                    <div class="">
+                        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                    </div>
+                </div>
 </div>
 
 </div>

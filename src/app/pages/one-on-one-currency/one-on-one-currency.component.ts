@@ -18,6 +18,7 @@ export class OneOnOneCurrencyComponent implements OnInit {
   ngOnInit(): void {
     this.currency.getAllCurrency().subscribe((data =>{
       this.allCurrency = data
+      console.log(data)
     }))
     this.createForm()
   }

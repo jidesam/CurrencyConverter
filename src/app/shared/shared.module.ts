@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { MatButtonModule } from '@angular/material/button';
 import { CurrencyRatePageComponent } from './currency-rate-page/currency-rate-page.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { LoaderComponent } from './loader/loader.component';
 
 
 
@@ -11,7 +12,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
     HeaderComponent,
-    CurrencyRatePageComponent
+    CurrencyRatePageComponent,
+    LoaderComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
   ],
   exports: [
     HeaderComponent,
-    CurrencyRatePageComponent
+    CurrencyRatePageComponent,
+    LoaderComponent
   ]
 })
 export class SharedModule { }
