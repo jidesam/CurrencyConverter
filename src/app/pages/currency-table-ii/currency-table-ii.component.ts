@@ -15,7 +15,8 @@ export class CurrencyTableIiComponent implements OnInit {
   showCurrency: any
   allFlags!: any
   allCurrencies : any
-
+  p=1 
+  showpagination = false;
   constructor(private currency : CurrencyServiceService) { }
 
   ngOnInit(): void {
